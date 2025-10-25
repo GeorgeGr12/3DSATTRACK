@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earth Globe - Satellite Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="title">SATELLITE TRACKER</div>
+    <canvas id="canvas"></canvas>
+    <div id="controls">
+        <h3 style="margin-top: 0;">Satellite Search</h3>
+        <input type="text" id="searchInput" placeholder="Search satellites..." style="width: 200px;" oninput="filterSatellites()">
+        
+        <div class="toggle-container">
+            <label class="toggle-label">
+                <input type="checkbox" id="crosshairToggle" onchange="toggleCrosshair()">
+                Enable Crosshair
+            </label>
+        </div>
+
+        <div class="legend">
+            <strong>Satellite Types:</strong>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00bfff;"></div>
+                <span>Space Stations</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #00ff00;"></div>
+                <span>Communications</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #9933ff;"></div>
+                <span>Telescopes</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffaa00;"></div>
+                <span>Navigation</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ff0000;"></div>
+                <span>Weather</span>
+            </div>
+        </div>
+
+        <div id="satelliteList">
+            <strong>Tracked Satellites:</strong>
+            <div id="satellites">Initializing...</div>
+        </div>
+    </div>
+    <div id="currentLocation">No location selected</div>
+    <div id="crosshair"></div>
+    <div id="dateTimeInfo"></div>
+    <div id="crosshairInfo"></div>
+    <div id="satelliteLabel"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/satelliteData.js"></script>
+    <script src="js/satellite.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
